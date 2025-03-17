@@ -16,7 +16,7 @@ class TaskSerializer(serializers.ModelSerializer):
 
     class Meta:
         model = Task
-        fields = ("title", "description", "deadline", "status", "priority")
+        fields = ("id", "title", "description", "deadline", "status", "priority")
 
     def validate_deadline(self, value):
         """
