@@ -1,0 +1,35 @@
+# --- Переменные окружения ---
+.env
+
+# --- IDE и редакторы ---
+# PyCharm
+.idea/
+*.iml
+# Vim
+*.swp
+*.swo
+*~
+
+# --- Кеши Python ---
+__pycache__/
+*.py[cod]
+*$py.class
+
+# --- Лог-файлы и отладочные данные ---
+*.log
+logs/
+debug.log
+
+# --- Статические файлы ---
+staticfiles/
+static/
+media/
+
+# --- Миграции ---
+**/migrations/*
+!**/migrations/__init__.py
+
+# --- Тесты и отчеты ---
+.coverage
+htmlcov/
+.pytest_cache/

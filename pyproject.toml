@@ -1,0 +1,24 @@
+[tool.poetry]
+name = "task-manager"
+version = "0.1.0"
+description = ""
+authors = ["Atsamazik <makeev.aa.home@gmail.com>"]
+
+[tool.poetry.dependencies]
+python = "^3.11"
+django = "^5.1.7"
+djangorestframework = "^3.15.2"
+psycopg = {extras = ["binary"], version = "^3.2.6"}
+django-environ = "^0.12.0"
+djangorestframework-simplejwt = "^5.5.0"
+bcrypt = "^4.3.0"
+
+
+[tool.poetry.group.dev.dependencies]
+ruff = "^0.11.0"
+pytest = "^8.3.5"
+pytest-django = "^4.10.0"
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
