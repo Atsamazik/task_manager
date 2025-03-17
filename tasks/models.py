@@ -46,14 +46,14 @@ class Task(models.Model):
     def update_status_timestamps(self, previous_status: str):
         """Обновляет timestamps в зависимости от изменения статуса."""
         status_transitions = {
-            ("new", "in_progress"): lambda: self._set_started,
-            ("new", "completed"): lambda: self._set_started_and_finished,
+            ("new", "in_progress"): lambda: self._set_started(),
+            ("new", "completed"): lambda: self._set_started_and_finished(),
             ("in_progress", "completed"): lambda: setattr(self, "finished_at", self.finished_at or timezone.now()),
             ("completed", "new"): lambda: self._reset_started_and_finished(),
             ("completed", "in_progress"): lambda: setattr(self, "finished_at", None),
             ("in_progress", "new"): lambda: setattr(self, "started_at", None),
-            (None, "in_progress"): self._set_started,
-            (None, "completed"): self._set_started_and_finished
+            (None, "in_progress"): self._set_started(),
+            (None, "completed"): self._set_started_and_finished(),
         }
 
         action = status_transitions.get((previous_status, self.status))
