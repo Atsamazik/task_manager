@@ -13,6 +13,8 @@ Task Management API — это RESTful API для управления зада�
 
 ## Запуск с Docker Compose
 
+! Перед запуском убедитесь, что порты 5432 и 8000 не заняты
+
 1. Клонируйте репозиторий:
    ```sh
    git clone https://github.com/Atsamazik/task_manager.git
