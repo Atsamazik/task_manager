@@ -47,6 +47,7 @@ INSTALLED_APPS = [
     # Third-party apps
     'rest_framework',
     'rest_framework_simplejwt',
+    'drf_spectacular',
 
     # Local apps
     'tasks.apps.TasksConfig',
@@ -155,6 +156,7 @@ REST_FRAMEWORK = {
         'rest_framework.parsers.JSONParser',
     ),
     'EXCEPTION_HANDLER': 'tasks.exceptions.custom_exception_handler',
+    'DEFAULT_SCHEMA_CLASS': 'drf_spectacular.openapi.AutoSchema',
 }
 
 # Настройки JWT-токенов
