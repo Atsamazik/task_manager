@@ -9,25 +9,36 @@ Task Management API — это RESTful API для управления зада�
 - Django REST Framework (DRF)
 - Simple JWT
 - PostgreSQL
+- Docker + Docker Compose
 
-## Установка
+## Запуск с Docker Compose
+
 1. Клонируйте репозиторий:
    ```sh
    git clone https://github.com/Atsamazik/task_manager.git
    cd task_manager
    ```
-2. Установите зависимости:
+
+2. Создайте файл `.env` в корневой папке и добавьте в него следующее содержимое:
    ```sh
-   poetry install
+   SECRET_KEY=<вставьте сюда ключ>
+   DEBUG=False
+   DATABASE_NAME=postgres
+   DATABASE_USER=postgres
+   DATABASE_PASSWORD=postgres
+   DATABASE_HOST=db
+   DATABASE_PORT=5432
+   ALLOWED_HOSTS=*
    ```
-3. Выполните миграции:
+3. Добавьте SECRET_KEY в .env
+4. Соберите и запустите контейнеры:
    ```sh
-   poetry run python manage.py makemigrations
-   poetry run python manage.py migrate
+   docker-compose up --build -d
    ```
-4. Запуск сервера:
+
+5. API будет доступен по адресу:
    ```sh
-   poetry run python manage.py runserver
+   http://0.0.0.0:8000/
    ```
 
 ## API-Эндпоинты
@@ -59,6 +70,6 @@ Middleware логирует HTTP-запросы (метод, URL, статус).
 ## Тесты
 Запуск тестов:
 ```sh
-pytest
+docker-compose exec web pytest
 ```
 
