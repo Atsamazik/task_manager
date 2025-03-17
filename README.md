@@ -59,6 +59,10 @@ Task Management API — это RESTful API для управления зада�
 ### Аналитика
 - **GET /api/v1/analytics/** - статистика по задачам
 
+### Документация
+- **GET /api/docs/** - Swagger
+- **GET /api/redoc/** - Redoc
+
 ## Аутентификация
 API использует JWT (токен добавляется в Authorization заголовок):
 ```sh
